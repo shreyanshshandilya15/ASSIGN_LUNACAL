@@ -1,4 +1,4 @@
-import './Gallery.css';
+import './gallery.css';
 import Images from '../Images.jsx';
 import { useState ,useEffect} from 'react';
 import axios from "axios";
