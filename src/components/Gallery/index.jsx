@@ -1,31 +1,34 @@
 import './Gallery.css';
 import Images from '../Images.jsx';
-import { useState } from 'react';
+import { useState ,useEffect} from 'react';
 import axios from "axios";
 import Left from '../Left/Left.jsx';
 
 export default function Gallery() {
   const [images,setImages]=useState([]);
-  
-  const handlechange=async(e)=>{
-    const file=e.target.files[0];
-   
-    if(file){
-       const newdata=new FormData();
-       newdata.append('image',file);
-       try{
-        const res=await axios.post('http://localhost:4000/upload',newdata,{
-          headers:{
-            "Content-Type":"multipart/form-data",
-          }
-         });
-         setImages([...images,res.data.imageUrl]);
-         console.log(res.data.imageUrl);
-       }catch(error){
-        console.error("error uploading the image :",error);
+
+  useEffect(() => {
+    const storedImages = JSON.parse(localStorage.getItem('images') || '[]');
+    setImages(storedImages);
+  }, []);
+
+  const handleChange = async (e) => {
+    const file = e.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+
+      reader.onloadend = () => {
+        const base64String = reader.result;
+        const newImages = [...images, base64String];
+        setImages(newImages);
+
+        localStorage.setItem('images', JSON.stringify(newImages));
+      };
+
+      reader.readAsDataURL(file);
     }
-    }
-  }
+  };
 
   return (
     <div className="gallery">
@@ -38,7 +41,7 @@ export default function Gallery() {
           <div className='buttons-gal-right'>
           <input 
                 type="file" 
-                onChange={handlechange}
+                onChange={handleChange}
                 id='file-image'
                 style={{display:"none"}}
           />
