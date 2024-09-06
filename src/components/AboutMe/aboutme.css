@@ -1,28 +1,41 @@
-.aboutme{
-    background: #363C43;
+.aboutme {
+    background: #363C43; /* Default background color */
     display: flex;
     position: relative;
     height: 37vh;
     border-radius: 15px;
     padding: 5px;
+    transition: background-color 0.3s; /* Smooth transition for background color */
 }
-.about-right{
+
+.about-right {
     margin: 10px;
 }
+
 .buttons-about {
     display: flex;
     justify-content: center;
     gap: 10px;
 }
-.buttons-about button{
-    background-color: #171717;
+
+.buttons-about button {
+    background-color: #191B1F; /* Default button color */
     color: white;
     padding: 8px 25px;
     border-radius: 10px;
     margin-bottom: 25px;
+    font-size: 18px;
+    border: none; /* Remove border */
+    cursor: pointer;
+    transition: background-color 0.3s;/* Smooth transition for button color */
 }
-.para{
+
+.buttons-about button.active {
+    background-color: #4a4a4a; /* Lighter color when active */
+}
+
+.para {
     color: #969696;
-    font-size: large;
+    font-size: 20px;
     padding: 10px;
 }

@@ -42,12 +42,13 @@ button{
 .buttons-gal-right i{
     width: 30px;
     height: 30px;
-    border: 1px solid gray;
     border-radius: 50%;
-    background-color: gray;
+    background-color:#191B1F;
+    color: #373E44;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 4px 8px rgba(55, 62, 68, 0.5);
 }
 .images{
     display: flex;

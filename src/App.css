@@ -1,0 +1,9 @@
+@media (max-width:786px) {
+    body{
+        overflow-y: scroll;
+    }
+    body::-webkit-scrollbar {
+        width: 0;
+        background: transparent; /* Optional: make background transparent */
+    }
+}
