@@ -1,0 +1,28 @@
+.aboutme{
+    background: #363C43;
+    display: flex;
+    position: relative;
+    height: 37vh;
+    border-radius: 15px;
+    padding: 5px;
+}
+.about-right{
+    margin: 10px;
+}
+.buttons-about {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.buttons-about button{
+    background-color: #171717;
+    color: white;
+    padding: 8px 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+.para{
+    color: #969696;
+    font-size: large;
+    padding: 10px;
+}
